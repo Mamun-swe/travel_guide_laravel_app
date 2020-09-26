@@ -7,6 +7,7 @@ use App\Http\Controllers\User\AccountController;
 
 // Admin Controllers
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\BannerController;
 
 
@@ -24,6 +25,7 @@ use App\Http\Controllers\Admin\BannerController;
 // Route::get('/', 'Website\WebsiteController@index')->name('home');
 // Website Routes
 Route::get('/',[WebsiteController::class, 'index'])->name('home');
+Route::get('/package/{id}', [WebsiteController::class, 'showPackage'])->name('package.show');
 Route::get('/about-us',[WebsiteController::class, 'about'])->name('about');
 Route::get('/services',[WebsiteController::class, 'services'])->name('services');
 Route::get('/contact-us',[WebsiteController::class, 'contact'])->name('contact');
@@ -46,6 +48,9 @@ Route::group(['prefix'=>'account','as'=>'account.', 'middleware' => ['auth', 'us
 // Admin Routes
 Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => ['auth', 'adminPermission']], function(){
     Route::get('/dashboard',[MainController::class, 'dashboard'])->name('dashboard');
+
+    Route::resource('package', PackageController::class);
+
     Route::get('/banner',[BannerController::class, 'index'])->name('banner.index');
     Route::get('/banner/create',[BannerController::class, 'create'])->name('banner.create');
     Route::post('/banner',[BannerController::class, 'store'])->name('banner.store');
