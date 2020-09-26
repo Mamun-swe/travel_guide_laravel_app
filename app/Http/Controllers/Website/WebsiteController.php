@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Website;
 
 use App\Models\Banner;
 use App\Models\Package;
+use App\Models\Booking;
+use App\Models\Photo;
+use App\Models\Blog;
+use App\Models\Team;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +16,9 @@ class WebsiteController extends Controller
     public function index(){
         $banners = Banner::orderBy('id', 'DESC')->get();
         $packages = Package::orderBy('id', 'DESC')->get();
-        return view('welcome', compact('banners', 'packages'));
+        $photos = Photo::orderBy('id', 'DESC')->take(6)->get();
+        $blogs = Blog::orderBy('id', 'DESC')->take(3)->get();
+        return view('welcome', compact('banners', 'packages', 'photos', 'blogs'));
     }
 
     public function showPackage($id){
@@ -20,12 +26,41 @@ class WebsiteController extends Controller
         return view('client.package.show', compact('package'));
     }
 
+    public function confirmBook(Request $request){
+        $request->validate([
+            'user_id' => 'required',
+            'package_id' => 'required',
+            'phone' => 'required',
+        ]);
+
+        $form_data = array(
+            'user_id'=> $request->user_id,
+            'package_id'=> $request->package_id,
+            'phone'=> $request->phone,
+            'status'=>'pending'
+        );
+
+        Booking::create($form_data);
+        return response()->json('success');
+    }
+
     public function about(){
-        return view('client.about');
+        $members = Team::all();
+        return view('client.about', compact('members'));
     }
 
     public function services(){
         return view('client.services');
+    }
+
+    public function gallery(){
+        $photos = Photo::orderBy('id', 'DESC')->get();
+        return view('client.gallery', compact('photos'));
+    }
+
+    public function blog(){
+        $blogs = Blog::orderBy('id', 'DESC')->get();
+        return view('client.blog.index', compact('blogs'));
     }
 
     public function contact(){

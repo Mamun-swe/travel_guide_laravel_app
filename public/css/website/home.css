@@ -9,11 +9,10 @@
 
 /* Home Sart */
 
-/* Packages */
+/* Packages start */
 
 .packages {
     padding-top: 60px;
-    padding-bottom: 60px;
 }
 
 h1 {
@@ -88,11 +87,153 @@ h1 {
 @media(min-width: 992px) {
     .packages {
         padding-top: 100px;
-        padding-bottom: 100px;
+        padding-bottom: 50px;
     }
 }
 
-/* Package Show */
+/* Packages end */
+
+/* Gallery start */
+
+.gallery {
+    padding-bottom: 50px;
+}
+
+.gallery .photo-card {
+    float: left;
+    overflow: hidden;
+    height: 250px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.gallery .photo-card img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.gallery .photo-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.377);
+    transition: 0.4s all;
+    opacity: 0;
+    padding: 10px;
+}
+
+.gallery .photo-card .overlay h5 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 0;
+    font-family: 'Secular One', sans-serif;
+}
+
+.gallery .photo-card:hover .overlay {
+    opacity: 1;
+}
+
+.gallery .btn {
+    color: #000;
+    font-size: 17px;
+    background: none;
+    padding: 7px 25px;
+    transition: 0.4s all;
+    border: 2px solid #000;
+    font-family: 'Secular One', sans-serif;
+}
+
+.gallery .btn:hover {
+    color: #fff;
+    background: #000;
+}
+
+@media(max-width: 576px) {
+    .gallery .photo-card {
+        width: 100%;
+    }
+}
+
+@media(min-width: 576px) {
+    .gallery .photo-card {
+        width: 50%;
+    }
+}
+
+@media(min-width: 768px) {
+    .gallery .photo-card {
+        width: 33.33%;
+    }
+}
+
+/* Gallery End */
+
+/* Blog Start */
+
+.blog {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.blog a {
+    text-decoration: none;
+}
+
+.blog .blog-card {
+    transition: 0.4s all;
+    margin-bottom: 32px;
+}
+
+.blog .blog-card .card-body h4 {
+    transition: 0.4s all;
+    color: rgb(119, 119, 119);
+    font-family: 'Secular One', sans-serif;
+}
+
+.blog .blog-card .card-body p {
+    font-size: 16px;
+    transition: 0.4s all;
+    color: rgb(119, 119, 119);
+}
+
+.blog .blog-card .card-body small {
+    font-size: 14px;
+    color: rgb(119, 119, 119);
+}
+
+.blog .blog-card:hover h4 {
+    color: #000;
+}
+
+.blog .blog-card:hover p {
+    color: #000;
+}
+
+.blog .btn {
+    color: #000;
+    font-size: 17px;
+    background: none;
+    padding: 7px 25px;
+    transition: 0.4s all;
+    border: 2px solid #000;
+    font-family: 'Secular One', sans-serif;
+}
+
+.blog .btn:hover {
+    color: #fff;
+    background: #000;
+}
+
+.blog .blog-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Blog End */
+
+/* Package Show Start */
 
 .package-show h2 {
     font-family: 'Secular One', sans-serif;
@@ -122,133 +263,171 @@ h1 {
     font-family: 'Secular One', sans-serif;
 }
 
+.package-show .booking-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background: #cfcdcdc9;
+}
+
+.package-show .booking-modal-backdrop .card {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.package-show .booking-modal-backdrop .card .card-header {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.package-show .booking-modal-backdrop .card .card-header h3 {
+    margin-top: 6px;
+    font-family: 'Secular One', sans-serif;
+}
+
+.package-show .booking-modal-backdrop .card .card-header .btn-close {
+    padding: 6px 11px;
+    color: #555;
+    border: 0;
+    background: #dfdfdf;
+}
+
+.package-show .booking-modal-backdrop .card .card-body p {
+    margin-bottom: 2px;
+    margin-left: 2px;
+}
+
+.package-show .booking-modal-backdrop .card .card-body .form-control:focus {
+    border: 1px solid #dfdfdf
+}
+
+.package-show .booking-modal-backdrop .card .card-body .btn {
+    border: 0;
+    color: #000;
+    padding: 6px 25px;
+    background: #dfdfdf;
+}
+
+@media(max-width: 576px) {
+    .package-show .booking-modal-backdrop .card {
+        width: 90vw;
+    }
+}
+
+@media(min-width: 576px) {
+    .package-show .booking-modal-backdrop .card {
+        width: 500px;
+    }
+}
+
+/* Package Show End */
+
 /* Home End */
 
 /* About Start */
 
-.about .header {
-    width: 100%;
-    background: url('../../website/images/static/bg2.jpg') center center fixed;
-    background-size: cover;
-    height: 250px;
-    position: relative;
+.about .card {
+    border-radius: 6px;
+    background: #ff4676;
 }
 
-.about .header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.432);
-}
-
-.about .header h2 {
-    font-size: 40px;
-    color: #fff;
-    letter-spacing: 2px;
-    word-spacing: 10px;
-    margin-bottom: 0px;
-    font-weight: 900;
-}
-
-.about .header h5 {
-    color: #FFF;
-    margin-bottom: 20px;
-    margin-top: 5px;
-}
-
-.about .team-members {
+.about .card .card-body {
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
-.about .team-members .card {
-    margin-bottom: 30px;
-    border: 1px solid #000;
+.about .card .card-body .img-box {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: auto;
 }
 
-.about .team-members .card .card-body {
-    background: #dfdfdf;
+.about .card .card-body .content {
+    color: #fff;
+    font-family: 'Secular One', sans-serif;
 }
 
-.about .team-members .card .card-body h5 {
-    text-transform: capitalize;
-    font-weight: bold;
-    color: #d5009d;
+@media(max-width: 576px) {
+    .about .header img {
+        max-width: 250px;
+    }
 }
 
-.about .team-members .card .card-body p {
-    margin-bottom: 0;
+@media(min-width: 576px) {
+    .about .header img {
+        max-width: 450px;
+    }
 }
 
 /* About End */
 
 /* Services Start */
 
-.services .header {
-    width: 100%;
-    background: url('../../website/images/static/bg2.jpg') center center fixed;
-    background-size: cover;
-    height: 250px;
-    position: relative;
+@media(max-width: 576px) {
+    .services .header img {
+        max-width: 250px;
+    }
 }
 
-.services .header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.432);
-}
-
-.services .header h2 {
-    font-size: 40px;
-    color: #fff;
-    letter-spacing: 2px;
-    word-spacing: 10px;
-    margin-bottom: 0px;
-    font-weight: 900;
-}
-
-.services .header h5 {
-    color: #FFF;
-    margin-bottom: 20px;
-    margin-top: 5px;
-}
-
-.services .main-content {
-    padding-top: 60px;
-    padding-bottom: 60px;
-}
-
-.services .main-content h2 {
-    text-transform: capitalize;
-    font-weight: bold;
-    color: #d5009d;
-}
-
-.services .main-content .card {
-    overflow: hidden;
-}
-
-.services .main-content .card img {
-    max-height: 330px;
-}
-
-.services .main-content .card .card-body h5 {
-    text-transform: capitalize;
-    font-weight: bold;
-    color: #000;
-}
-
-.services .main-content .card .card-body p {
-    font-size: 15px;
-    line-height: 1.8rem;
+@media(min-width: 576px) {
+    .services .header img {
+        max-width: 450px;
+    }
 }
 
 /* Services End */
+
+/* Gallery Start */
+
+@media(max-width: 576px) {
+    .gallery .header img {
+        max-width: 250px;
+    }
+}
+
+@media(min-width: 576px) {
+    .gallery .header img {
+        max-width: 450px;
+    }
+}
+
+/* Gallery End */
+
+/* Blog Index Start */
+
+@media(max-width: 576px) {
+    .blog-index .header img {
+        max-width: 250px;
+    }
+}
+
+@media(min-width: 576px) {
+    .blog-index .header img {
+        max-width: 350px;
+    }
+}
+
+/* Blog Index End */
+
+/* Contact Start */
+
+@media(max-width: 576px) {
+    .contact .header img {
+        max-width: 250px;
+    }
+}
+
+@media(min-width: 576px) {
+    .contact .header img {
+        max-width: 500px;
+    }
+}
+
+/* Contact End */
 
 /* Auth Start */
 
@@ -303,6 +482,25 @@ h1 {
 }
 
 /* Auth End */
+
+/* Footer Start */
+
+.footer {
+    margin-top: 50px;
+    background: #eeebeb5d;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer img {
+    height: 40px;
+}
+
+.footer a {
+    color: #000;
+    display: block;
+}
+
+/* Footer End */
 
 .flex-center {
     display: -webkit-box;

@@ -60,16 +60,23 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('admin.photo.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
-                        <p>Products</span></p>
+                        <p>Photos</span></p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{route('admin.blog.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
-                        <p>Orders</span></p>
+                        <p>Blog</span></p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('admin.team.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>Team</span></p>
                     </a>
                 </li>
 
