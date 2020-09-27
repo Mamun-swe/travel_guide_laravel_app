@@ -63,8 +63,23 @@ class WebsiteController extends Controller
         return view('client.blog.index', compact('blogs'));
     }
 
+    public function blogRead($id){
+        $blog = Blog::find($id);
+        return view('client.blog.read', compact('blog'));
+    }
+
     public function contact(){
         return view('client.contact');
+    }
+
+    public function message(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'message' => 'required',
+        ]);
+
+        var_dump($request->all());
     }
 
     public function login(){

@@ -22,7 +22,7 @@
 
                 @foreach($blogs as $blog)
                 <div class="col-12 col-md-6 col-lg-4">
-                    <a href="">
+                    <a href="{{route('blog.read', $blog->id)}}">
                         <div class="card rounded-0 blog-card">
                             <img src="{{url('')}}/website/images/blog/{{$blog->image}}" class="img-fluid">
                             <div class="card-body">

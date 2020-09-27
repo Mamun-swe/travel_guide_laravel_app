@@ -413,7 +413,67 @@ h1 {
 
 /* Blog Index End */
 
+/* Blog Read star */
+
+.blog-read h2 {
+    font-family: 'Secular One', sans-serif;
+}
+
+.blog-read small {
+    font-family: 'Secular One', sans-serif;
+}
+
+.blog-read p {
+    font-size: 17px;
+    line-height: 1.8rem;
+}
+
+.blog-read .details {
+    line-height: 1.8rem;
+}
+
+.blog-read .no-data img {
+    height: 200px;
+}
+
+.blog-read .no-data h5 {
+    font-family: 'Secular One', sans-serif;
+    margin-bottom: 15px;
+}
+
+.blog-read .no-data .btn {
+    color: #fff;
+    padding: 6px 25px;
+    background: #f9a826;
+    font-family: 'Secular One', sans-serif;
+}
+
+/* Blog Read end */
+
 /* Contact Start */
+
+.contact form .form-group p {
+    margin-bottom: 3px;
+    margin-left: 2px;
+}
+
+.contact form .form-group .form-control {
+    font-size: 16px;
+    min-height: 45px;
+    font-family: 'Secular One', sans-serif;
+}
+
+.contact form .form-group .form-control:focus {
+    border: 1px solid #f9a826;
+}
+
+.contact form .btn {
+    color: #fff;
+    padding: 6px 25px;
+    font-size: 17px;
+    background: #f9a826;
+    font-family: 'Secular One', sans-serif;
+}
 
 @media(max-width: 576px) {
     .contact .header img {
@@ -451,7 +511,7 @@ h1 {
 .auth .card .card-header h4 {
     font-weight: 900;
     margin-bottom: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Secular One', sans-serif;
 }
 
 .auth .card .card-body {
@@ -488,7 +548,10 @@ h1 {
 .footer {
     margin-top: 50px;
     background: #eeebeb5d;
-    font-family: 'Roboto', sans-serif;
+}
+
+.footer h5 {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .footer img {

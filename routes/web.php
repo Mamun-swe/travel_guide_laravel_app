@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\BookingRequestController;
 use App\Http\Controllers\Admin\BannerController;
 
 
@@ -35,8 +36,11 @@ Route::get('/services',[WebsiteController::class, 'services'])->name('services')
 Route::get('/gallery',[WebsiteController::class, 'gallery'])->name('gallery');
 
 Route::get('/blog',[WebsiteController::class, 'blog'])->name('blog');
+Route::get('/blog/{id}/read',[WebsiteController::class, 'blogRead'])->name('blog.read');
 
 Route::get('/contact-us',[WebsiteController::class, 'contact'])->name('contact');
+Route::post('/message',[WebsiteController::class, 'message'])->name('message');
+
 Route::get('/login',[WebsiteController::class, 'login'])->name('login');
 Route::get('/register',[WebsiteController::class, 'register'])->name('register');
 Route::get('/reset',[WebsiteController::class, 'reset'])->name('reset');
@@ -61,6 +65,10 @@ Route::group(['prefix'=>'admin','as'=>'admin.', 'middleware' => ['auth', 'adminP
     Route::resource('photo', PhotoController::class);
     Route::resource('blog', BlogController::class);
     Route::resource('team', TeamController::class);
+
+    Route::get('booking-requests', [BookingRequestController::class, 'index'])->name('booking.requests');
+    Route::put('booking-approve/{id}', [BookingRequestController::class, 'approve'])->name('booking.approve');
+    Route::put('booking-cancel/{id}', [BookingRequestController::class, 'canceled'])->name('booking.cancel');
 
     Route::get('/banner',[BannerController::class, 'index'])->name('banner.index');
     Route::get('/banner/create',[BannerController::class, 'create'])->name('banner.create');

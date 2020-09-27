@@ -75,11 +75,11 @@
                                 <td class="text-center">{{$key+1}}</td>
                                 <td>{{$package->title}}</td>
                                 <td class="text-center">
-                                    @if($package->status = 'pending')
+                                    @if($package->status == 'pending')
                                         <span class="text-danger text-capitalize">{{$package->status}}</span>
-                                    @elseif($package->status = 'confirmed')
+                                    @elseif($package->status =='confirmed')
                                         <span class="text-success text-capitalize">{{$package->status}}</span>
-                                    @elseif($package->status = 'canceled')
+                                    @elseif($package->status == 'canceled')
                                         <span class="text-warning text-capitalize">{{$package->status}}</span>
                                     @endif
                                 </td>
